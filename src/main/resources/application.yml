@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: weather-service
+logging:
+  level:
+    root: info
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+api:
+  weather:
+    forecast:
+      url: http://api.openweathermap.org/data/2.5/forecast?units=imperial&appid=2151e963173c318d3e21b973c984391a&q=
+      maxtemp: 40

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <title>Weather Forecast</title>
+</head>
+<body>
+<div align="center">
+    <h2>Weather Forecast Web Application</h2>
+    <br>
+    <br>
+</div>
+<form>
+    <div align="center">
+        <td th:text="${forecastdata.city}"></td>
+    </div>
+    <br> <br>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Minimun Temperature</th>
+            <th>Maximun Temperature</th>
+            <th>Recommendation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="forecast : ${forecastdata.forecasts}">
+            <td th:text="${forecast.date}"></td>
+            <td th:text="${forecast.minTemp}"></td>
+            <td th:text="${forecast.maxTemp}"></td>
+            <td th:text="${forecast.recommendation}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br>
+</form>
+</body>
+</html>
